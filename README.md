@@ -7,10 +7,24 @@
 
 # Nuget
 ## Wszystkie muszą matchować wersję dotnet'a
-Microsoft.AspNetCore.OpenApi
-Microsoft.EntityFrameworkCore.Desing
-Microsoft.EntityFrameworkCore.SqlServer
+Microsoft.AspNetCore.OpenApi \
+Microsoft.EntityFrameworkCore.Desing \
+Microsoft.EntityFrameworkCore.SqlServer \
 Swashbuckle.AspNetCore.SwaggerUI
+
+# Docker
+tworzymy nowy kontener, używamy tego polecenia: \
+docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=MyStrongPassword1234!" -p 1433:1433 -d mcr.microsoft.com/mssql/server:2022-latest
+
+## Migracja bazy
+tworzenie migracji
+```
+dotnet ef migrations add <nazwa migracji>
+```
+tworzenie bazy
+```
+dotnet ef database update
+```
 
 # Zmienne:
 [Key] --> zmienna jest kluczem \
