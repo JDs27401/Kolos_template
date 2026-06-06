@@ -14,7 +14,7 @@ Swashbuckle.AspNetCore.SwaggerUI
 
 # Docker
 tworzymy nowy kontener, używamy tego polecenia: \
-docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=MyStrongPassword1234!" -p 1433:1433 -d mcr.microsoft.com/mssql/server:2022-latest
+docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=Password123@" -p 1433:1433 -d mcr.microsoft.com/mssql/server:2022-latest
 
 ## Migracja bazy
 tworzenie migracji
@@ -87,9 +87,11 @@ builder.Services.AddDbContext<DatabaseContext>(opt =>
 ```
 
 "default" dodajemy w *appsettings.json* jako:
+```
 "ConnectionStrings": {
-    "Default": "Data Source=localhost, 1433; User=SA; Password=YourStrongPassword123!; Initial Catalog=master; Integrated Security=False;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False "
-} \
+    "Default": "Data Source=localhost, 1433; User=SA; Password=Password123@; Initial Catalog=master; Integrated Security=False;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False "
+}
+```
 pod "AllowedHosts"
 
 referecje dla servisów i klasy servisu: \
